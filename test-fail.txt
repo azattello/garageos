@@ -1,0 +1,27 @@
+﻿
+   FAIL  Tests\Feature\ClientTenantTest
+  тип duplicate client by phone or email is reused within the same organiтАж 1.02s  
+  тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА  
+   FAILED  Tests\Feature\ClientTenantTest > duplicate client by phone or emaтАж   
+  Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/clients?client_id=1'
++'http://localhost/clients'
+
+  at tests\Feature\ClientTenantTest.php:37
+     33тЦХ         $existing = Client::create(['organization_id' => $organization->id, 'name' => '╨Ш╨▓╨░╨╜ ╨Я╨╡╤В╤А╨╛╨▓', 'phone' => '+7 (700) 123-45-67', 'email' => 'ivan@example.test']);
+     34тЦХ 
+     35тЦХ         $this->actingAs($user)
+     36тЦХ             ->post('/clients', ['name' => '╨Ш╨▓╨░╨╜ ╨Я╨╡╤В╤А╨╛╨▓ 2', 'phone' => '+77001234567', 'email' => 'ivan@example.test'])
+  тЮЬ  37тЦХ             ->assertRedirect('/clients?client_id='.$existing->id);
+     38тЦХ 
+     39тЦХ         $this->assertSame(1, Client::where('organization_id', $organization->id)->count());
+     40тЦХ     }
+     41тЦХ }
+
+
+  Tests:    1 failed (2 assertions)
+  Duration: 1.34s
+

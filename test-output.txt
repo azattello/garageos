@@ -1,0 +1,197 @@
+﻿
+   PASS  Tests\Unit\ExampleTest
+  тЬУ that true is true                                                    0.01s  
+
+   PASS  Tests\Feature\AdminDetailTest
+  тЬУ platform admin can view organization detail                          1.28s  
+  тЬУ regular user cannot view organization detail                         0.04s  
+
+   PASS  Tests\Feature\AdminTest
+  тЬУ platform admin can view and manage organizations                     0.09s  
+  тЬУ regular user cannot access platform admin                            0.04s  
+
+   PASS  Tests\Feature\AnalyticsTest
+  тЬУ analytics uses tenant scoped payments orders and workload for selecтАж 0.09s  
+  тЬУ unknown analytics period falls back to thirty days                   0.06s  
+
+   PASS  Tests\Feature\AppointmentConflictTest
+  тЬУ master cannot have overlapping appointments                          0.06s  
+
+   PASS  Tests\Feature\AppointmentManagementTest
+  тЬУ owner can update and cancel appointment                              0.09s  
+  тЬУ appointment entry can preselect only a tenant client                 0.07s  
+  тЬУ archived car cannot be used for a new appointment                    0.04s  
+
+   PASS  Tests\Feature\AppointmentOrderTest
+  тЬУ appointment creates one linked order without duplication             0.10s  
+
+   PASS  Tests\Feature\AuthenticationTest
+  тЬУ guest is redirected to named login from application routes           0.06s  
+  тЬУ user can login and logout                                            0.08s  
+  тЬУ user can login with mixed case email                                 0.05s  
+  тЬУ login is throttled after five failed attempts                        0.05s  
+  тЬУ registration route is rate limited                                   0.05s  
+  тЬУ public and client portal routes have rate limits                     0.04s  
+  тЬУ dashboard uses authenticated user and organization context           0.08s  
+
+   PASS  Tests\Feature\BillingLifecycleTest
+  тЬУ trial to paid activation to expiry hard lock lifecycle               0.15s  
+  тЬУ start plan is feature gated and business unlocks business features   0.12s  
+  тЬУ downgrade is rejected when employee count exceeds target limit       0.06s  
+  тЬУ client portal accounts do not consume employee seats                 0.08s  
+  тЬУ expiry sweep command is idempotent                                   0.06s  
+  тЬУ expired subscription can request renewal of the same plan            0.07s  
+  тЬУ platform admin trial extension clears old paid period                0.04s  
+
+   PASS  Tests\Feature\ClientPortalTest
+  тЬУ owner can enable client portal with password setup notification      0.30s  
+  тЬУ manager can enable portal access for a client in their tenant        0.27s  
+  тЬУ client portal shows only linked tenant data and client visible fielтАж 0.16s  
+  тЬУ client role cannot open staff workspace routes                       0.05s  
+
+   PASS  Tests\Feature\ClientProfileTest
+  тЬУ owner can view client profile summary                                0.05s  
+  тЬУ client profile is tenant scoped                                      0.04s  
+  тЬУ client index searches contacts and cars within tenant                0.07s  
+
+   FAIL  Tests\Feature\ClientTenantTest
+  тЬУ client is created only in authenticated organization                 0.04s  
+  тип duplicate client by phone or email is reused within the same organiтАж 0.05s  
+
+   PASS  Tests\Feature\DashboardOnboardingTest
+  тЬУ onboarding progress uses only records from the authenticated organiтАж 0.07s  
+
+   PASS  Tests\Feature\DemoTest
+  тЬУ demo page is public and exposes read only summary                    0.39s  
+  тЬУ demo requires seed data instead of mutating database                 0.04s  
+
+   PASS  Tests\Feature\EmployeeInviteTest
+  тЬУ owner can create employee invite                                     0.04s  
+  тЬУ owner cannot invite beyond plan user limit                           0.04s  
+  тЬУ client portal accounts do not consume employee seats                 0.04s  
+  тЬУ owner can resend invite and old link is expired                      0.04s  
+  тЬУ owner can revoke invite without deleting its audit record            0.04s  
+
+   PASS  Tests\Feature\EmployeeManagementTest
+  тЬУ owner can view team summary and mechanic cannot manage team          0.06s  
+
+   PASS  Tests\Feature\ExampleTest
+  тЬУ guest is sent to login from the application root                     0.03s  
+
+   PASS  Tests\Feature\FinanceTest
+  тЬУ finance totals use successful tenant payments and tenant expenses    0.07s  
+  тЬУ owner can record expense and add or archive categories without erasтАж 0.05s  
+  тЬУ expense update and archive preserve audited history                  0.07s  
+  тЬУ average check and debtor list are calculated for current tenant      0.04s  
+  тЬУ custom finance range is validated and dates are returned             0.06s  
+  тЬУ mechanic cannot access financials or create expenses                 0.05s  
+
+   PASS  Tests\Feature\InventoryTest
+  тЬУ owner can create part with initial stock and record audit movement   0.04s  
+  тЬУ adding part to order atomically updates order and stock ledger       0.06s  
+  тЬУ reserved order part is issued when order becomes ready               0.07s  
+  тЬУ cancelling order releases reservation and logs movement              0.05s  
+  тЬУ part added to in progress order is issued and returned on cancellatтАж 0.06s  
+  тЬУ manual issue cannot consume reserved stock                           0.06s  
+  тЬУ reservation triggers low stock alert using available stock           0.05s  
+  тЬУ order rejects part quantity above stock without partial changes      0.04s  
+  тЬУ stock receipt issue return and adjustment are recorded               0.05s  
+  тЬУ inventory is tenant scoped and unavailable to mechanics              0.05s  
+  тЬУ low stock notification is deduplicated and resolved after restock    0.05s  
+
+   PASS  Tests\Feature\InviteAcceptanceAndCalendarTest
+  тЬУ invited user can accept invite and create account                    0.04s  
+  тЬУ calendar supports week view filter                                   0.03s  
+
+   PASS  Tests\Feature\NotificationAndSettingsTest
+  тЬУ production defaults use almaty timezone and kazakhstani organizatioтАж 0.04s  
+  тЬУ owner can update organization settings                               0.03s  
+  тЬУ user can mark all notifications as read                              0.03s  
+  тЬУ organization settings reject invalid timezone and currency format    0.03s  
+  тЬУ owner can filter activity and receives safe before after details     0.04s  
+  тЬУ mechanic does not receive activity log data                          0.03s  
+
+   PASS  Tests\Feature\OrderDetailAccessTest
+  тЬУ owner can view financials and assigned mechanic sees only work detaтАж 0.06s  
+  тЬУ mechanic cannot open another mechanics order or kanban               0.05s  
+  тЬУ kanban exposes backend allowed status transitions                    0.05s  
+  тЬУ order form can preselect a tenant client and active car              0.05s  
+  тЬУ mechanic cannot register payment for assigned order                  0.04s  
+
+   PASS  Tests\Feature\OrderPhotoTest
+  тЬУ order photo is stored with client visibility flag                    0.10s  
+  тЬУ photo upload rejects non image content with image extension          0.06s  
+  тЬУ public photo stream requires valid token and client visibility       0.05s  
+  тЬУ client photo stream requires ownership and visibility                0.05s  
+  тЬУ legacy public order photos can be migrated to private storage        0.04s  
+
+   PASS  Tests\Feature\OrderTotalsTest
+  тЬУ order total is calculated on backend from work items                 0.06s  
+
+   PASS  Tests\Feature\PaymentTest
+  тЬУ successful payment updates paid total and balance and cancel restorтАж 0.06s  
+  тЬУ payment cannot exceed current backend balance                        0.13s  
+  тЬУ order with nonzero balance requires explicit owner override to closтАж 0.07s  
+  тЬУ order with negative balance cannot close without explicit override   0.07s  
+
+   PASS  Tests\Feature\PublicOrderLinkSecurityTest
+  тЬУ owner can revoke a public order link and access is immediately deniтАж 0.08s  
+  тЬУ rotating public link revokes the previous token                      0.07s  
+
+   PASS  Tests\Feature\PublicOrderTest
+  тЬУ public order link uses hash and exposes only client safe data        0.06s  
+  тЬУ revoked and expired public links are not accessible                  0.05s  
+
+   PASS  Tests\Feature\RegistrationTest
+  тЬУ owner registration creates tenant and trial subscription             0.04s  
+
+   PASS  Tests\Feature\RoleAccessTest
+  тЬУ mechanic cannot open owner or manager routes or mutate master data   0.09s  
+
+   PASS  Tests\Feature\ServiceCategoryStatusTest
+  тЬУ registration creates tenant defaults                                 0.04s  
+  тЬУ statuses are tenant scoped                                           0.04s  
+  тЬУ owner can update archive and restore service without deleting histoтАж 0.04s  
+  тЬУ owner cannot update another organizations service                    0.04s  
+
+   PASS  Tests\Feature\SettingsCatalogTest
+  тЬУ owner can manage categories and non terminal statuses                0.05s  
+  тЬУ category cannot be archived from another tenant                      0.04s  
+
+   PASS  Tests\Feature\TrialGuardTest
+  тЬУ expired trial redirects to subscription page                         0.04s  
+  тЬУ blocked organization cannot access workspace but owner can see blocтАж 0.04s  
+  тЬУ active subscription without an end date fails closed                 0.03s  
+  тЬУ manager can view subscription lock but cannot request a plan change  0.05s  
+
+   PASS  Tests\Feature\VehicleProfileTest
+  тЬУ owner can view vehicle profile summary                               0.05s  
+  тЬУ vehicle profile is tenant scoped                                     0.03s  
+  тЬУ owner can search tenant cars by vehicle or client                    0.05s  
+  тЬУ owner can update archive and restore car without losing order histoтАж 0.06s  
+  тЬУ car with open order cannot be archived                               0.03s  
+  тЬУ owner cannot update or archive another organizations car             0.03s  
+  тФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФАтФА  
+   FAILED  Tests\Feature\ClientTenantTest > duplicate client by phone or emaтАж   
+  Failed asserting that two strings are equal.
+--- Expected
++++ Actual
+@@ @@
+-'http://localhost/clients?client_id=1'
++'http://localhost/clients'
+
+  at tests\Feature\ClientTenantTest.php:37
+     33тЦХ         $existing = Client::create(['organization_id' => $organization->id, 'name' => '╨Ш╨▓╨░╨╜ ╨Я╨╡╤В╤А╨╛╨▓', 'phone' => '+7 (700) 123-45-67', 'email' => 'ivan@example.test']);
+     34тЦХ 
+     35тЦХ         $this->actingAs($user)
+     36тЦХ             ->post('/clients', ['name' => '╨Ш╨▓╨░╨╜ ╨Я╨╡╤В╤А╨╛╨▓ 2', 'phone' => '+77001234567', 'email' => 'ivan@example.test'])
+  тЮЬ  37тЦХ             ->assertRedirect('/clients?client_id='.$existing->id);
+     38тЦХ 
+     39тЦХ         $this->assertSame(1, Client::where('organization_id', $organization->id)->count());
+     40тЦХ     }
+     41тЦХ }
+
+
+  Tests:    1 failed, 106 passed (1154 assertions)
+  Duration: 8.59s
+

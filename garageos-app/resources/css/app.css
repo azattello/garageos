@@ -1,0 +1,227 @@
+@import 'tailwindcss';
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "@fontsource-variable/inter";
+
+@custom-variant dark (&:is(.dark *));
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source "../**/*.blade.php";
+@source "../**/*.js";
+@source "../**/*.vue";
+@source "../**/*.tsx";
+
+@theme {
+  --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+}
+
+:root {
+  --garage-background: #090a0c;
+  --garage-surface: #101216;
+  --garage-surface-secondary: #15181d;
+  --garage-surface-elevated: #191c22;
+  --garage-border: #242830;
+  --garage-border-subtle: #1b1e24;
+  --garage-text: #f4f5f7;
+  --garage-text-secondary: #a1a6b0;
+  --garage-text-muted: #6f7580;
+  --garage-accent: #b8ff3d;
+  --garage-success: #72e06a;
+  --garage-warning: #f5c451;
+  --garage-error: #f06464;
+  --garage-info: #62a8ff;
+  --background: #090a0c;
+  --foreground: #f4f5f7;
+  --card: #101216;
+  --card-foreground: #f4f5f7;
+  --popover: #15181d;
+  --popover-foreground: #f4f5f7;
+  --primary: #b8ff3d;
+  --primary-foreground: #090a0c;
+  --secondary: #15181d;
+  --secondary-foreground: #f4f5f7;
+  --muted: #15181d;
+  --muted-foreground: #6f7580;
+  --accent: #191c22;
+  --accent-foreground: #f4f5f7;
+  --destructive: #f06464;
+  --border: #242830;
+  --input: #242830;
+  --ring: #b8ff3d;
+  --chart-1: #b8ff3d;
+  --chart-2: #a1a6b0;
+  --chart-3: #62a8ff;
+  --chart-4: #72e06a;
+  --chart-5: #f5c451;
+  --radius: 0.5rem;
+  --sidebar: #101216;
+  --sidebar-foreground: #f4f5f7;
+  --sidebar-primary: #b8ff3d;
+  --sidebar-primary-foreground: #090a0c;
+  --sidebar-accent: #15181d;
+  --sidebar-accent-foreground: #f4f5f7;
+  --sidebar-border: #242830;
+  --sidebar-ring: #b8ff3d;
+  --chart-background: var(--garage-surface);
+  --chart-foreground: var(--garage-text);
+  --chart-foreground-muted: var(--garage-text-muted);
+  --chart-line-primary: var(--garage-accent);
+  --chart-line-secondary: var(--garage-info);
+  --chart-crosshair: var(--garage-text-secondary);
+  --chart-grid: var(--garage-border);
+  --chart-brush-border: var(--chart-grid);
+  --chart-tooltip-background: var(--garage-surface-elevated);
+  --chart-tooltip-foreground: var(--garage-text);
+  --chart-tooltip-muted: var(--garage-text-muted);
+  --chart-marker-background: var(--garage-surface);
+  --chart-marker-border: var(--garage-border);
+  --chart-marker-foreground: var(--garage-text);
+  --chart-marker-badge-background: var(--garage-accent);
+  --chart-marker-badge-foreground: var(--garage-background);
+  --chart-indicator-color: var(--garage-accent);
+  --chart-indicator-secondary-color: var(--garage-info);
+  --chart-segment-background: rgba(184, 255, 61, 0.08);
+  --chart-segment-line: rgba(184, 255, 61, 0.4);
+  --chart-label: var(--garage-text-muted);
+  --chart-scale-01: #1c2b1d;
+  --chart-scale-02: #31552a;
+  --chart-scale-03: #548c34;
+  --chart-scale-04: #83c83a;
+  --chart-scale-05: var(--garage-accent);
+  --chart-scale-pattern-color: var(--garage-surface-elevated);
+}
+
+body {
+  background: var(--garage-background);
+  color: var(--garage-text);
+    font-family: var(--font-sans);
+}
+
+.garage-sidebar-scroll {
+  scrollbar-color: var(--garage-border) transparent;
+  scrollbar-gutter: stable;
+  scrollbar-width: thin;
+}
+
+.garage-sidebar-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.garage-sidebar-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.garage-sidebar-scroll::-webkit-scrollbar-thumb {
+  border-radius: 9999px;
+  background: #30353e;
+}
+
+.garage-sidebar-scroll::-webkit-scrollbar-thumb:hover {
+  background: var(--garage-text-muted);
+}
+
+@theme inline {
+    --font-heading: var(--font-sans);
+    --font-sans: Inter, ui-sans-serif, system-ui, sans-serif;
+    --color-sidebar-ring: var(--sidebar-ring);
+    --color-sidebar-border: var(--sidebar-border);
+    --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+    --color-sidebar-accent: var(--sidebar-accent);
+    --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+    --color-sidebar-primary: var(--sidebar-primary);
+    --color-sidebar-foreground: var(--sidebar-foreground);
+    --color-sidebar: var(--sidebar);
+    --color-chart-5: var(--chart-5);
+    --color-chart-4: var(--chart-4);
+    --color-chart-3: var(--chart-3);
+    --color-chart-2: var(--chart-2);
+    --color-chart-1: var(--chart-1);
+    --color-ring: var(--ring);
+    --color-input: var(--input);
+    --color-border: var(--border);
+    --color-destructive: var(--destructive);
+    --color-accent-foreground: var(--accent-foreground);
+    --color-accent: var(--accent);
+    --color-muted-foreground: var(--muted-foreground);
+    --color-muted: var(--muted);
+    --color-secondary-foreground: var(--secondary-foreground);
+    --color-secondary: var(--secondary);
+    --color-primary-foreground: var(--primary-foreground);
+    --color-primary: var(--primary);
+    --color-popover-foreground: var(--popover-foreground);
+    --color-popover: var(--popover);
+    --color-card-foreground: var(--card-foreground);
+    --color-card: var(--card);
+    --color-foreground: var(--foreground);
+    --color-background: var(--background);
+    --radius-sm: calc(var(--radius) * 0.6);
+    --radius-md: calc(var(--radius) * 0.8);
+    --radius-lg: var(--radius);
+    --radius-xl: calc(var(--radius) * 1.4);
+    --radius-2xl: calc(var(--radius) * 1.8);
+    --radius-3xl: calc(var(--radius) * 2.2);
+    --radius-4xl: calc(var(--radius) * 2.6);
+    --color-chart-scale-pattern-color: var(--chart-scale-pattern-color);
+    --color-chart-scale-05: var(--chart-scale-05);
+    --color-chart-scale-04: var(--chart-scale-04);
+    --color-chart-scale-03: var(--chart-scale-03);
+    --color-chart-scale-02: var(--chart-scale-02);
+    --color-chart-scale-01: var(--chart-scale-01);
+    --color-chart-label: var(--chart-label);
+    --color-chart-marker-foreground: var(--chart-marker-foreground);
+    --color-chart-marker-border: var(--chart-marker-border);
+    --color-chart-marker-background: var(--chart-marker-background);
+    --color-chart-tooltip-muted: var(--chart-tooltip-muted);
+    --color-chart-tooltip-foreground: var(--chart-tooltip-foreground);
+    --color-chart-tooltip-background: var(--chart-tooltip-background);
+    --color-chart-grid: var(--chart-grid);
+    --color-chart-crosshair: var(--chart-crosshair);
+    --color-chart-line-secondary: var(--chart-line-secondary);
+    --color-chart-line-primary: var(--chart-line-primary);
+    --color-chart-foreground-muted: var(--chart-foreground-muted);
+    --color-chart-foreground: var(--chart-foreground);
+    --color-chart-background: var(--chart-background);
+    --chart-brush-border: var(----chart-brush-border);
+    --chart-line-secondary: var(----chart-line-secondary);
+    --chart-line-primary: var(----chart-line-primary);
+}
+
+.dark {
+  --background: #090a0c;
+  --foreground: #f4f5f7;
+  --chart-1: var(--garage-accent);
+  --chart-2: var(--garage-info);
+  --chart-3: var(--garage-warning);
+  --chart-4: var(--garage-success);
+  --chart-5: var(--garage-error);
+  --chart-background: var(--garage-surface);
+  --chart-foreground: var(--garage-text);
+  --chart-foreground-muted: var(--garage-text-muted);
+  --chart-crosshair: var(--garage-text-secondary);
+  --chart-grid: var(--garage-border);
+  --chart-brush-border: var(--chart-grid);
+  --chart-marker-background: var(--garage-surface);
+  --chart-marker-border: var(--garage-border);
+  --chart-marker-foreground: var(--garage-text);
+  --chart-label: var(--garage-text-muted);
+  --chart-scale-01: #1c2b1d;
+  --chart-scale-02: #31552a;
+  --chart-scale-03: #548c34;
+  --chart-scale-04: #83c83a;
+  --chart-scale-05: var(--garage-accent);
+  --chart-scale-pattern-color: var(--garage-surface-elevated);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    }
+  body {
+    @apply bg-background text-foreground;
+    }
+  html {
+    @apply font-sans;
+    color-scheme: dark;
+    }
+}
